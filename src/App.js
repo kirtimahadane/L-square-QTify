@@ -1,18 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
-
+import { StyledEngineProvider } from '@mui/material';
+//import Hero from './components/Hero/Hero';
+//import Card from "./components/Card/Card";
+import { Outlet } from 'react-router-dom';
+import { fetchNewAlbums, fetchTopAlbums } from './api/api';
 
 
 
 function App() {
-  return (
-    <div className="App">
-      <Navbar/>
-    <Hero/>
+  const [data, setData]= useState({});
+  const generateData=(key, source)=>{
+    source().then((data)=>{
+      setData(prevState=>{
+        return {...prevState, [key]:data}
+      })
+    })
+  }
+useEffect(()=>{
+generateData("topAlbums", fetchTopAlbums);
+generateData("newAlbums", fetchNewAlbums);
 
-    </div>
+},[]);
+const {topAlbums=[], newAlbums=[]}=data;
+
+  return (
+    <>
+    <StyledEngineProvider injectFirst>
+    <Navbar/>
+      <Outlet context={{data:{topAlbums, newAlbums}}}/>
+    
+    </StyledEngineProvider>
+     
+    </>
     
 
   );
