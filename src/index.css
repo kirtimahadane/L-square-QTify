@@ -5,10 +5,13 @@
 }
 
 *, *::after, *::before{
-  margin:0;
-  padding: 0;
+ 
   box-sizing: border-box;
 }
+* {
+  margin: 0;
+}
+
 html, body{
   height:100%;
 }
@@ -17,8 +20,9 @@ body{
   background-color: var(--color-black);
   color:var(--color-white);
   line-height: 1.5;
-  overflow: hidden;
-  height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  /* height: 100vh; */
   }
   img,
   video, 
@@ -44,10 +48,17 @@ body{
     overflow-wrap: break-word;
   }
  #root,
-__next{
+#__next{
   isolation: isolate;
 } 
-
+a,
+a:hover,
+a:focus,
+a:visited,
+a:active{
+  text-decoration: none;
+  color: inherit;
+}
 
 .swiper-slide{
   width: auto !important;

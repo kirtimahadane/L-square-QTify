@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import styles from "./Carousel.module.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useSwiper } from 'swiper/react';
-import 'swiper/css';
-import { Pagination, Navigation } from 'swiper';
+import 'swiper/css' ;
+import {  Navigation } from 'swiper';
 
 import CarouselLeftNavigation from "./CarouselLeftNavigation/CarouselLeftNavigation";
 //import styles from './CarouselLeftNavigation';
@@ -16,7 +16,7 @@ const Controls=({  data })=>{
         swiper.slideTo(0,1);
 
 
-    },[data]);
+    },[data, swiper]);
     return <></>
 }
 function Carousel({data, renderComponent}) {
@@ -30,9 +30,9 @@ function Carousel({data, renderComponent}) {
       spaceBetween={40}
       allowTouchMove  
       >
-      <Controls data={data}/>
-      <CarouselLeftNavigation/>
-      <CarouselRightNavigation/>
+      <Controls data={data} />
+      <CarouselLeftNavigation />
+      <CarouselRightNavigation />
       {data.map((ele)=>{
          return <SwiperSlide>{renderComponent(ele)}</SwiperSlide> 
       

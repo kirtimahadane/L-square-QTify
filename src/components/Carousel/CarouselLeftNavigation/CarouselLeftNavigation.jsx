@@ -12,7 +12,7 @@ function CarouselLeftNavigation() {
     }, [])
   return (
     <div className={styles.leftNavigation}>
-     {!isBeginning && <ArrowLeft onClick={()=>swiper.slidePrev}/>} 
+     {!isBeginning && <ArrowLeft onClick={()=>swiper.slidePrev()}/>} 
     </div>
   )
 }

@@ -11,8 +11,8 @@ function HomePage(props) {
     <>
       <Hero />
       <div className={styles.wrapper}>
-      <Section title="Top Album" data={topAlbums} type="album"/>
-      <Section title="New Album" data={newAlbums} type="album"/>
+      <Section title="Top Albums" data={topAlbums} type="album"/>
+      <Section title="New Albums" data={newAlbums} type="album"/>
       </div>
       
     </>

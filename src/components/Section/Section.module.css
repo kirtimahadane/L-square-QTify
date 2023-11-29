@@ -5,13 +5,22 @@
 }
 .toggleText{
     cursor: pointer;
-    color:var(--color-primary)
+    color:var(--color-primary);
+    
 }
 .cardsWrapper{
-    margin-top: 18px;
+    margin-top: 18px ;
+    
+
+
 }
 .wrapper{
     display: flex;
-    gap:20px;
+    
+    gap:40px;
     flex-wrap: wrap;
+  
+}
+.filterWrapper{
+    margin-top: 15px;
 }
