@@ -19,3 +19,30 @@ export const fetchNewAlbums=async()=>{
                  
 
 } 
+
+export const fetchSongs=async()=>{
+    try{
+        const response= await axios.get(`${Backend_ENDPOINT}/songs`)
+        return response.data;
+        }catch(e){
+            console.log(e)
+        }         
+                 
+
+} 
+
+export const fetchFilters= async()=>{
+    try{
+        const response= await axios.get(`${Backend_ENDPOINT}/genres`)
+        console.log(response.data)
+        return response.data;
+        }catch(e){
+            console.log(e)
+        }         
+                 
+
+} 
+
+
+
+

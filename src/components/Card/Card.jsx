@@ -30,7 +30,7 @@ function Card({data, type}) {
           </Tooltip>
         ); 
         }     
-          case "song":{
+          case "songs":{
             const {image, title,  likes}= data;  
           return(
                   <div className={styles.wrapper}>
@@ -38,7 +38,7 @@ function Card({data, type}) {
                       <img src={image} alt="album" loading='lazy'/>
                       <div className={styles.banner}>
                           <div className={styles.pill}>
-                            <p>{likes}Likes</p>
+                            <p>{likes} Likes</p>
                           </div>
                       </div>
                   </div>
